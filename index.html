@@ -1,22 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SOVYX vUltraCore — Cápsula Legend</title>
+  <title>SOVYX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Luciana&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-family: 'Luciana', sans-serif;
       background-color: #fdfdff;
-      color: #3d0066;
+      color: #ffffff;
       padding: 2em;
       line-height: 1.6;
       animation: fadeIn 1.5s ease-in;
     }
-    h1, h2 {
+    h1 {
       color: #6a0dad;
       text-align: center;
+      font-size: 3em;
+      margin-bottom: 1em;
     }
     .segmento {
       border: 2px solid #6a0dad;
@@ -25,36 +27,38 @@
       border-radius: 8px;
       cursor: pointer;
       transition: transform 0.3s ease;
-      background-color: #f3e8ff;
+      background-color: #6a0dad;
+      color: #ffffff;
+      text-transform: uppercase;
+      font-weight: bold;
     }
     .segmento:hover {
       transform: scale(1.03);
-      background-color: #e6ccff;
+      background-color: #8a2be2;
     }
     .bloque {
       display: none;
       border: 1px dashed #6a0dad;
       padding: 1em;
       margin-top: 1em;
-      background-color: #f9f0ff;
+      background-color: #6a0dad;
+      color: #ffffff;
+      text-transform: uppercase;
     }
-    input, textarea, button {
+    input, button {
       padding: 0.5em;
       margin: 0.5em 0;
       width: 100%;
       font-size: 1em;
-      border: 1px solid #6a0dad;
+      border: 1px solid #ffffff;
       border-radius: 4px;
+      background-color: #fdfdff;
+      color: #6a0dad;
+      font-family: 'Luciana', sans-serif;
     }
-    .panel, .mutacion {
-      background-color: #f0f8ff;
-      border: 1px dashed #6a0dad;
-      padding: 1em;
+    #panel h3 {
+      color: #ffffff;
       margin-top: 1em;
-    }
-    .mutacion {
-      background-color: #fff0f5;
-      border-color: #9900cc;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -63,59 +67,53 @@
   </style>
 </head>
 <body>
-  <h1>SOVYX </h1>
-  <h2>Myth Protocol — Live Mutation Edition</h2>
+  <h1>SOVYX</h1>
 
-  <div class="segmento" onclick="mostrar('registro')">  Registrar contenido</div>
-  <div class="segmento" onclick="mostrar('correccion')"> Corrección predictiva</div>
-  <div class="segmento" onclick="mostrar('simulacion')">  Simulación de ingresos</div>
-  <div class="segmento" onclick="mostrar('mutacion')"> Evolución diaria</div>
+  <div class="segmento" onclick="mostrar('registro')">Acceso a cápsula</div>
+  <div class="segmento" onclick="mostrar('panel')">Corrección + Simulación + Evolución</div>
 
-  <!-- REGISTRO -->
+  <!-- ACCESO -->
   <div id="registro" class="bloque">
-    <h3> Registro de contenido publicado</h3>
-    <input type="text" placeholder="Título del contenido">
-    <textarea rows="4" placeholder="Describe el post, reel o carrusel que publicaste"></textarea>
-    <button onclick="alert('Contenido registrado. Corrección en proceso...')">Registrar</button>
+    <h3>ACCEDE CON TU USUARIO DE INSTAGRAM</h3>
+    <input type="text" id="usuario" placeholder="Usuario de Instagram">
+    <input type="email" id="correo" placeholder="Correo electrónico">
+    <button onclick="iniciarAnalisis()">Activar cápsula</button>
   </div>
 
-  <!-- CORRECCIÓN -->
-  <div id="correccion" class="bloque">
-    <h3> Corrección Predictiva</h3>
-    <p>Tu contenido tiene buen ritmo, pero el CTA no activa deseo. Corrige con sticker + pregunta directa.</p>
-    <p>Formato ideal: Reel vertical + texto emocional + validación pública.</p>
-    <p>Próxima corrección en: 3 días</p>
-  </div>
+  <!-- PANEL -->
+  <div id="panel" class="bloque">
+    <h3>CORRECCIÓN PREDICTIVA</h3>
+    <p id="correccion">Esperando análisis...</p>
 
-  <!-- SIMULACIÓN -->
-  <div id="simulacion" class="bloque">
-    <h3> Simulación de Ingresos</h3>
-    <div class="panel">
-      <strong>Proyección actual:</strong><br>
-      Alcance estimado: 4.7K<br>
-      Leads potenciales: 18<br>
-      Conversión esperada: 3 clientes<br>
-      Ingreso proyectado: €6.200 en 10 días
-    </div>
-  </div>
+    <h3>SIMULACIÓN DE INGRESOS</h3>
+    <p id="simulacion">Esperando análisis...</p>
 
-  <!-- EVOLUCION -->
-  <div id="mutacion" class="bloque">
-    <h3>Evolución Documentada</h3>
-    <div class="mutacion">
-      <strong>Día 1:</strong> Publicación sin CTA<br>
-      <strong>Día 3:</strong> Reel corregido con sticker + pregunta<br>
-      <strong>Día 5:</strong> 2 leads confirmados<br>
-      <strong>Día 7:</strong> 1 cliente high ticket<br>
-      <strong>Validación pública:</strong> Carrusel emocional publicado con resultados<br>
-      <strong>Proyección:</strong> €10K si se repite con 3 cápsulas más
-    </div>
+    <h3>EVOLUCIÓN DOCUMENTADA</h3>
+    <p id="mutacion">Esperando análisis...</p>
   </div>
 
   <script>
     function mostrar(id) {
       document.querySelectorAll('.bloque').forEach(b => b.style.display = 'none');
       document.getElementById(id).style.display = 'block';
+    }
+
+    function iniciarAnalisis() {
+      const usuario = document.getElementById('usuario').value;
+      const correo = document.getElementById('correo').value;
+
+      fetch('https://TU-BACKEND.replit.app/analizar-instagram', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ usuario, correo })
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('correccion').innerText = data.correccion;
+        document.getElementById('simulacion').innerText = data.simulacion;
+        document.getElementById('mutacion').innerText = data.mutacion;
+        mostrar('panel');
+      });
     }
   </script>
 </body>
