@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SOVYX V6 — Sistema Viral</title>
+  <title>SOVYX vUltraCore — Cápsula Legend</title>
   <style>
     body {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -29,6 +29,29 @@
       transform: scale(1.03);
       background-color: #ffeaea;
     }
+    .bloque {
+      display: none;
+      border: 1px dashed #d60000;
+      padding: 1em;
+      margin-top: 1em;
+      background-color: #fff0f0;
+    }
+    input, button {
+      padding: 0.5em;
+      margin: 0.5em 0;
+      width: 100%;
+      font-size: 1em;
+    }
+    .stats, .mutacion {
+      background-color: #f0fff0;
+      border: 1px dashed #00aa00;
+      padding: 1em;
+      margin-top: 1em;
+    }
+    .mutacion {
+      background-color: #f0f8ff;
+      border-color: #0077cc;
+    }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -36,26 +59,80 @@
   </style>
 </head>
 <body>
-  <h1>SOVYX V6</h1>
-  <h2>Sistema Viral de Segmentación</h2>
+  <h1>SOVYX vUltraCore⚡️Legend</h1>
+  <h2>Myth Protocol — Live Mutation Edition</h2>
 
-  <div class="segmento" onclick="alert('Segmento: Creador activado')">
-    <strong>CREADORES</strong><br>
-    Si diseñas, editas o ritualizas contenido, entra aquí.
+  <div class="segmento" onclick="mostrar('creadores')">CREADORES</div>
+  <div class="segmento" onclick="mostrar('operadores')">OPERADORES</div>
+  <div class="segmento" onclick="mostrar('visionarios')">VISIONARIOS</div>
+
+  <!-- CREADORES -->
+  <div id="creadores" class="bloque">
+    <h3>Registro Emocional — Creadores</h3>
+    <input type="text" placeholder="Nombre de usuario">
+    <input type="email" placeholder="Correo electrónico">
+    <button onclick="activarPanel('creadores')">Activar cápsula</button>
   </div>
 
-  <div class="segmento" onclick="alert('Segmento: Operador activado')">
-    <strong>OPERADORES</strong><br>
-    Si gestionas, escalas o automatizas, este es tu bloque.
+  <!-- OPERADORES -->
+  <div id="operadores" class="bloque">
+    <h3>Registro Estratégico — Operadores</h3>
+    <input type="text" placeholder="Nombre de usuario">
+    <input type="email" placeholder="Correo electrónico">
+    <button onclick="activarPanel('operadores')">Activar cápsula</button>
   </div>
 
-  <div class="segmento" onclick="alert('Segmento: Visionario activado')">
-    <strong>VISIONARIOS</strong><br>
-    Si migras, transformas o lideras cápsulas, entra aquí.
+  <!-- VISIONARIOS -->
+  <div id="visionarios" class="bloque">
+    <h3>Registro Predictivo — Visionarios</h3>
+    <input type="text" placeholder="Nombre de usuario">
+    <input type="email" placeholder="Correo electrónico">
+    <button onclick="activarPanel('visionarios')">Activar cápsula</button>
   </div>
 
-  <p style="text-align:center; margin-top:2em;">
-    Esta cápsula se activa sin código. Cada clic es una promesa de escala.
-  </p>
+  <!-- PANEL DE CORRECCIÓN -->
+  <div id="panel" class="bloque">
+    <h3>📊 Corrección Predictiva + Simulación de Ingresos</h3>
+    <div id="stats"></div>
+    <div class="mutacion">
+      <strong>Mutación Diaria:</strong><br>
+      Día 3: sin leads<br>
+      Día 7: 2 clientes<br>
+      Corrección: CTA + reel con sticker<br>
+      Proyección: €6K en 10 días si se ejecuta
+    </div>
+  </div>
+
+  <script>
+    function mostrar(id) {
+      document.querySelectorAll('.bloque').forEach(b => b.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function activarPanel(tipo) {
+      const stats = {
+        creadores: `
+          Activaciones: 12<br>
+          Prompts duplicados: 47<br>
+          Alcance estimado: 3.2K<br>
+          Engagement emocional: 87%
+        `,
+        operadores: `
+          Automatizaciones activas: 5<br>
+          Cápsulas duplicadas: 22<br>
+          Impacto viral: 7.8K<br>
+          Conversión estratégica: 12.4%
+        `,
+        visionarios: `
+          Protocolos migratorios: 3<br>
+          Cápsulas de legado: 9<br>
+          Alcance proyectado: 12.4K<br>
+          Influencia editorial: 91%
+        `
+      };
+      document.getElementById('stats').innerHTML = stats[tipo];
+      document.getElementById('panel').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
