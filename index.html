@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,50 +8,53 @@
   <style>
     body {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background-color: #fffaf0;
-      color: #222;
+      background-color: #fdfdff;
+      color: #3d0066;
       padding: 2em;
       line-height: 1.6;
       animation: fadeIn 1.5s ease-in;
     }
     h1, h2 {
-      color: #d60000;
+      color: #6a0dad;
       text-align: center;
     }
     .segmento {
-      border: 2px solid #d60000;
+      border: 2px solid #6a0dad;
       padding: 1em;
       margin: 1em 0;
       border-radius: 8px;
       cursor: pointer;
       transition: transform 0.3s ease;
+      background-color: #f3e8ff;
     }
     .segmento:hover {
       transform: scale(1.03);
-      background-color: #ffeaea;
+      background-color: #e6ccff;
     }
     .bloque {
       display: none;
-      border: 1px dashed #d60000;
+      border: 1px dashed #6a0dad;
       padding: 1em;
       margin-top: 1em;
-      background-color: #fff0f0;
+      background-color: #f9f0ff;
     }
-    input, button {
+    input, textarea, button {
       padding: 0.5em;
       margin: 0.5em 0;
       width: 100%;
       font-size: 1em;
+      border: 1px solid #6a0dad;
+      border-radius: 4px;
     }
-    .stats, .mutacion {
-      background-color: #f0fff0;
-      border: 1px dashed #00aa00;
+    .panel, .mutacion {
+      background-color: #f0f8ff;
+      border: 1px dashed #6a0dad;
       padding: 1em;
       margin-top: 1em;
     }
     .mutacion {
-      background-color: #f0f8ff;
-      border-color: #0077cc;
+      background-color: #fff0f5;
+      border-color: #9900cc;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -59,47 +63,52 @@
   </style>
 </head>
 <body>
-  <h1>SOVYX vUltraCore⚡️Legend</h1>
+  <h1>SOVYX </h1>
   <h2>Myth Protocol — Live Mutation Edition</h2>
 
-  <div class="segmento" onclick="mostrar('creadores')">CREADORES</div>
-  <div class="segmento" onclick="mostrar('operadores')">OPERADORES</div>
-  <div class="segmento" onclick="mostrar('visionarios')">VISIONARIOS</div>
+  <div class="segmento" onclick="mostrar('registro')">  Registrar contenido</div>
+  <div class="segmento" onclick="mostrar('correccion')"> Corrección predictiva</div>
+  <div class="segmento" onclick="mostrar('simulacion')">  Simulación de ingresos</div>
+  <div class="segmento" onclick="mostrar('mutacion')"> Evolución diaria</div>
 
-  <!-- CREADORES -->
-  <div id="creadores" class="bloque">
-    <h3>Registro Emocional — Creadores</h3>
-    <input type="text" placeholder="Nombre de usuario">
-    <input type="email" placeholder="Correo electrónico">
-    <button onclick="activarPanel('creadores')">Activar cápsula</button>
+  <!-- REGISTRO -->
+  <div id="registro" class="bloque">
+    <h3> Registro de contenido publicado</h3>
+    <input type="text" placeholder="Título del contenido">
+    <textarea rows="4" placeholder="Describe el post, reel o carrusel que publicaste"></textarea>
+    <button onclick="alert('Contenido registrado. Corrección en proceso...')">Registrar</button>
   </div>
 
-  <!-- OPERADORES -->
-  <div id="operadores" class="bloque">
-    <h3>Registro Estratégico — Operadores</h3>
-    <input type="text" placeholder="Nombre de usuario">
-    <input type="email" placeholder="Correo electrónico">
-    <button onclick="activarPanel('operadores')">Activar cápsula</button>
+  <!-- CORRECCIÓN -->
+  <div id="correccion" class="bloque">
+    <h3> Corrección Predictiva</h3>
+    <p>Tu contenido tiene buen ritmo, pero el CTA no activa deseo. Corrige con sticker + pregunta directa.</p>
+    <p>Formato ideal: Reel vertical + texto emocional + validación pública.</p>
+    <p>Próxima corrección en: 3 días</p>
   </div>
 
-  <!-- VISIONARIOS -->
-  <div id="visionarios" class="bloque">
-    <h3>Registro Predictivo — Visionarios</h3>
-    <input type="text" placeholder="Nombre de usuario">
-    <input type="email" placeholder="Correo electrónico">
-    <button onclick="activarPanel('visionarios')">Activar cápsula</button>
+  <!-- SIMULACIÓN -->
+  <div id="simulacion" class="bloque">
+    <h3> Simulación de Ingresos</h3>
+    <div class="panel">
+      <strong>Proyección actual:</strong><br>
+      Alcance estimado: 4.7K<br>
+      Leads potenciales: 18<br>
+      Conversión esperada: 3 clientes<br>
+      Ingreso proyectado: €6.200 en 10 días
+    </div>
   </div>
 
-  <!-- PANEL DE CORRECCIÓN -->
-  <div id="panel" class="bloque">
-    <h3>📊 Corrección Predictiva + Simulación de Ingresos</h3>
-    <div id="stats"></div>
+  <!-- MUTACIÓN -->
+  <div id="mutacion" class="bloque">
+    <h3>Evolución Documentada</h3>
     <div class="mutacion">
-      <strong>Mutación Diaria:</strong><br>
-      Día 3: sin leads<br>
-      Día 7: 2 clientes<br>
-      Corrección: CTA + reel con sticker<br>
-      Proyección: €6K en 10 días si se ejecuta
+      <strong>Día 1:</strong> Publicación sin CTA<br>
+      <strong>Día 3:</strong> Reel corregido con sticker + pregunta<br>
+      <strong>Día 5:</strong> 2 leads confirmados<br>
+      <strong>Día 7:</strong> 1 cliente high ticket<br>
+      <strong>Validación pública:</strong> Carrusel emocional publicado con resultados<br>
+      <strong>Proyección:</strong> €10K si se repite con 3 cápsulas más
     </div>
   </div>
 
@@ -107,31 +116,6 @@
     function mostrar(id) {
       document.querySelectorAll('.bloque').forEach(b => b.style.display = 'none');
       document.getElementById(id).style.display = 'block';
-    }
-
-    function activarPanel(tipo) {
-      const stats = {
-        creadores: `
-          Activaciones: 12<br>
-          Prompts duplicados: 47<br>
-          Alcance estimado: 3.2K<br>
-          Engagement emocional: 87%
-        `,
-        operadores: `
-          Automatizaciones activas: 5<br>
-          Cápsulas duplicadas: 22<br>
-          Impacto viral: 7.8K<br>
-          Conversión estratégica: 12.4%
-        `,
-        visionarios: `
-          Protocolos migratorios: 3<br>
-          Cápsulas de legado: 9<br>
-          Alcance proyectado: 12.4K<br>
-          Influencia editorial: 91%
-        `
-      };
-      document.getElementById('stats').innerHTML = stats[tipo];
-      document.getElementById('panel').style.display = 'block';
     }
   </script>
 </body>
