@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOVYX V6 — Sistema Viral</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #fffaf0;
+      color: #222;
+      padding: 2em;
+      line-height: 1.6;
+      animation: fadeIn 1.5s ease-in;
+    }
+    h1, h2 {
+      color: #d60000;
+      text-align: center;
+    }
+    .segmento {
+      border: 2px solid #d60000;
+      padding: 1em;
+      margin: 1em 0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .segmento:hover {
+      transform: scale(1.03);
+      background-color: #ffeaea;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>SOVYX V6</h1>
+  <h2>Sistema Viral de Segmentación</h2>
+
+  <div class="segmento" onclick="alert('Segmento: Creador activado')">
+    <strong>CREADORES</strong><br>
+    Si diseñas, editas o ritualizas contenido, entra aquí.
+  </div>
+
+  <div class="segmento" onclick="alert('Segmento: Operador activado')">
+    <strong>OPERADORES</strong><br>
+    Si gestionas, escalas o automatizas, este es tu bloque.
+  </div>
+
+  <div class="segmento" onclick="alert('Segmento: Visionario activado')">
+    <strong>VISIONARIOS</strong><br>
+    Si migras, transformas o lideras cápsulas, entra aquí.
+  </div>
+
+  <p style="text-align:center; margin-top:2em;">
+    Esta cápsula se activa sin código. Cada clic es una promesa de escala.
+  </p>
+</body>
+</html>
